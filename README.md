@@ -2,7 +2,7 @@
 
 ### [Live Site](https://your-live-site-url.com)
 
-![Portfolio Website](https://i.ibb.co/WgPMpts/image.png)
+![Portfolio Website](https://i.ibb.co/WgPMpt/image.png)
 
 This project is based on templates and code from various sources. Below are the citations for the original repositories:
 

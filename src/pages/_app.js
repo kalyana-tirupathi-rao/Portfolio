@@ -1,4 +1,3 @@
-// src/pages/_app.js
 import React, { useState, useMemo } from "react";
 import { ThemeProvider } from "styled-components";
 import { lightTheme, darkTheme } from "../styles/theme";
@@ -7,6 +6,7 @@ import Layout from "../layout/Layout";
 
 function MyApp({ Component, pageProps }) {
   const [themeName, setThemeName] = useState("dark");
+
   const theme = useMemo(
     () => (themeName === "dark" ? darkTheme : lightTheme),
     [themeName]

@@ -1,31 +1,28 @@
-// src/styles/globals.js
 import { createGlobalStyle } from "styled-components";
 
 const GlobalStyle = createGlobalStyle`
   :root {
-    box-sizing: border-box;
-    font-size: 16px;
+    --accent: ${({ theme }) => theme.accent};
   }
-
-  *, *::before, *::after { box-sizing: inherit; }
 
   body {
-    margin: 0;
-    padding: 0;
     background: ${({ theme }) => theme.body};
     color: ${({ theme }) => theme.text};
-    font-family: 'Poppins', system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
-    transition: background 0.25s ease, color 0.25s ease;
+    transition: background 0.3s ease, color 0.3s ease;
+    font-family: 'Poppins', sans-serif;
+    overflow-x: hidden;
   }
 
-  a { color: inherit; text-decoration: none; }
+  * {
+    transition: background 0.3s ease, color 0.3s ease;
+    box-sizing: border-box;
+  }
 
-  h1,h2,h3,h4 { margin: 0; }
-
-  /* small helpers */
-  .container { max-width: 1200px; margin: 0 auto; padding: 0 1rem; }
+  .BgAnimation__svg {
+    opacity: 0.18;
+    mix-blend-mode: multiply;
+    pointer-events: none;
+  }
 `;
 
 export default GlobalStyle;

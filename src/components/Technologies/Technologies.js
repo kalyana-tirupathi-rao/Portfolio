@@ -1,55 +1,80 @@
-import React from 'react';
-import { DiFirebase, DiReact } from 'react-icons/di';
-import { FaBrain } from 'react-icons/fa';
-import { Section, SectionDivider, SectionText, SectionTitle } from '../../styles/GlobalComponents';
-import { List, ListContainer, ListItem, ListParagraph, ListTitle } from './TechnologiesStyles';
+import React from "react";
+import { DiDatabase, DiPython } from "react-icons/di";
+import { FaTools } from "react-icons/fa";
+import {
+  Section,
+  SectionDivider,
+  SectionText,
+  SectionTitle,
+} from "../../styles/GlobalComponents";
+import {
+  List,
+  ListContainer,
+  ListItem,
+  ListParagraph,
+  ListTitle,
+} from "./TechnologiesStyles";
 
 const Technologies = () => (
   <Section id="tech">
-    <SectionDivider divider />
+    <SectionDivider />
     <SectionTitle>Technologies</SectionTitle>
     <SectionText>
-      I've gained hands-on experience with a variety of technologies in web development, 
-      spanning both back-end and design aspects, as well as in machine learning.
+      I specialize in data engineering, analytics, and machine learning — 
+      with strong hands-on experience across modern data platforms, pipelines,
+      and model development workflows.
     </SectionText>
+
     <List>
+      {/* =======================
+          DATA ENGINEERING
+      ======================= */}
       <ListItem>
-        <picture>
-          <DiReact size="3rem" />
-        </picture>
+        <DiDatabase size="3rem" />
         <ListContainer>
-          <ListTitle>Front-End</ListTitle>
+          <ListTitle>Data Engineering</ListTitle>
           <ListParagraph>
-            Experience with <br />
-            React.js, HTML, CSS, JavaScript
+            Databricks <br />
+            Azure Data Factory <br />
+            Teradata, SQL Server <br />
+            Azure Data Lake <br />
+            ETL Pipelines & Workflow Automation
           </ListParagraph>
         </ListContainer>
       </ListItem>
+
+      {/* =======================
+          MACHINE LEARNING
+      ======================= */}
       <ListItem>
-        <picture>
-          <DiFirebase size="3rem" />
-        </picture>
-        <ListContainer>
-          <ListTitle>Back-End</ListTitle>
-          <ListParagraph>
-            Experience with <br />
-            Node.js, Express.js, Databases (SQL, MongoDB)
-          </ListParagraph>
-        </ListContainer>
-      </ListItem>
-      <ListItem>
-        <picture>
-          <FaBrain size="3rem" />
-        </picture>
+        <DiPython size="3rem" />
         <ListContainer>
           <ListTitle>Machine Learning</ListTitle>
           <ListParagraph>
-            Experience with <br />
-            Python, scikit-learn, TensorFlow
+            Python (Pandas, NumPy) <br />
+            Scikit-learn, TensorFlow <br />
+            Data Preprocessing & Modeling <br />
+            Predictive Analytics Projects
+          </ListParagraph>
+        </ListContainer>
+      </ListItem>
+
+      {/* =======================
+         TOOLS & VISUALIZATION
+      ======================= */}
+      <ListItem>
+        <FaTools size="3rem" />
+        <ListContainer>
+          <ListTitle>Tools & Visualization</ListTitle>
+          <ListParagraph>
+            Power BI, Tableau <br />
+            GitHub, Excel, Google Workspace <br />
+            VS Code, Databricks Notebooks
           </ListParagraph>
         </ListContainer>
       </ListItem>
     </List>
+
     <SectionDivider colorAlt />
   </Section>
 );

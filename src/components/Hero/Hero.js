@@ -1,24 +1,52 @@
-import React from 'react';
+// src/components/Hero/Hero.js
+import React from "react";
+import { motion } from "framer-motion";
+import {
+  Section,
+  SectionText,
+  SectionTitle,
+} from "../../styles/GlobalComponents";
+import Button from "../../styles/GlobalComponents/Button";
+import { LeftSection } from "./HeroStyles";
 
-import { Section, SectionText, SectionTitle } from '../../styles/GlobalComponents';
-import Button from '../../styles/GlobalComponents/Button';
-import { LeftSection } from './HeroStyles';
+const heroVariants = {
+  hidden: { opacity: 0, y: 20 },
+  visible: {
+    opacity: 1,
+    y: 0,
+    transition: { duration: 0.6, ease: "easeOut" },
+  },
+};
 
-const Hero = (props) => (
-  <>
-    <Section row nopadding>
-      <LeftSection>
-        <SectionTitle main center>
-          Welcome To <br />
-          My Personal Portfolio@Kalyana Tirupathi Rao
-        </SectionTitle>
-        <SectionText>
-        The purpose of Python Machine Learning is to empower individuals with the skills to harness the power of data, develop intelligent models, and solve real-world problems using cutting-edge machine learning techniques
-        </SectionText>
-        <Button onClick={props.handleClick}>Learn More</Button>
-      </LeftSection>
-    </Section>
-  </>
+const Hero = () => (
+  <Section row nopadding id="hero">
+    <LeftSection
+      as={motion.div}
+      variants={heroVariants}
+      initial="hidden"
+      whileInView="visible"
+      viewport={{ once: true, amount: 0.4 }}
+    >
+      <SectionTitle main center>
+        Hi, I'm <br />
+        <span style={{ color: "#9cc9e3" }}>Kalyana Tirupathi Rao</span>
+        <br />
+        Data Engineer & ML Enthusiast
+      </SectionTitle>
+
+      <SectionText>
+        I build scalable ETL pipelines and machine learning solutions. Skilled
+        in Databricks, Azure Data Factory, SQL, and Python—transforming data
+        into reliable, actionable insights.
+      </SectionText>
+
+      <motion.div whileHover={{ scale: 1.04 }} whileTap={{ scale: 0.97 }}>
+        <Button onClick={() => (window.location = "#projects")}>
+          Explore My Work
+        </Button>
+      </motion.div>
+    </LeftSection>
+  </Section>
 );
 
 export default Hero;

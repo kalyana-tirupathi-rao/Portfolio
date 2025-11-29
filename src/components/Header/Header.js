@@ -1,48 +1,77 @@
-import Link from 'next/link';
-import React from 'react';
-import { AiFillGithub, AiFillInstagram, AiFillLinkedin } from 'react-icons/ai';
-import { DiCssdeck } from 'react-icons/di';
+// src/components/Header/Header.js
+import React, { useState } from "react";
+import {
+  HeaderContainer,
+  Nav,
+  Logo,
+  NavLinks,
+  NavLinkItem,
+  ToggleBtn,
+  MobileMenuButton,
+  MobileMenu,
+} from "./HeaderStyles";
+import { FiSun, FiMoon, FiGithub, FiMenu, FiX } from "react-icons/fi";
 
-import { Container, Div1, Div2, Div3, NavLink, SocialIcons } from './HeaderStyles';
+const Header = ({ toggleTheme, themeName }) => {
+  const [menuOpen, setMenuOpen] = useState(false);
 
-const Header = () =>  (
-  <Container>
-    <Div1>
-      <Link href="/">
-        <a style={{ display: 'flex', alignItems: 'center', color:"white" }}>
-          <DiCssdeck size="3rem" /> <span>Portfolio</span>
-        </a>
-      </Link>
-    </Div1>
-    <Div2>
-      <li>
-        <Link href="#projects">
-          <NavLink>Projects</NavLink>
-        </Link>
-      </li>
-      <li>
-        <Link href="#tech">
-          <NavLink>Technologies</NavLink>
-        </Link>
-      </li>        
-      <li>
-        <Link href="#about">
-          <NavLink>About</NavLink>
-        </Link>
-      </li>        
-    </Div2>
-      <Div3>
-        <SocialIcons href=" https://www.github.com/kalyana-tirupathi-rao">
-          <AiFillGithub size="3rem" />
-        </SocialIcons>
-        <SocialIcons href="https://www.linkedin.com/in/kalyana-tirupathi-rao">
-          <AiFillLinkedin size="3rem" />
-        </SocialIcons>
-        <SocialIcons href="https://google.com">
-          <AiFillInstagram size="3rem"/>
-        </SocialIcons>
-      </Div3>
-    </Container>
-);
+  return (
+    <HeaderContainer>
+      <Nav className="container">
+        {/* Logo */}
+        <Logo href="/">Kalyana Rao</Logo>
+
+        {/* Desktop Links */}
+        <NavLinks>
+          <NavLinkItem href="#projects">Projects</NavLinkItem>
+          <NavLinkItem href="#tech">Technologies</NavLinkItem>
+          <NavLinkItem href="#about">About</NavLinkItem>
+          <NavLinkItem href="#timeline">Timeline</NavLinkItem>
+        </NavLinks>
+
+        {/* Right Section */}
+        <div style={{ display: "flex", alignItems: "center", gap: "1rem" }}>
+          {/* Theme Toggle */}
+          <ToggleBtn onClick={toggleTheme} aria-label="toggle theme">
+            {themeName === "dark" ? <FiSun size={18} /> : <FiMoon size={18} />}
+          </ToggleBtn>
+
+          {/* GitHub */}
+          <a
+            href="https://github.com/kalyana-tirupathi-rao"
+            target="_blank"
+            rel="noreferrer"
+            aria-label="github"
+          >
+            <FiGithub size={20} />
+          </a>
+
+          {/* Mobile Menu Button */}
+          <MobileMenuButton onClick={() => setMenuOpen(!menuOpen)}>
+            {menuOpen ? <FiX size={22} /> : <FiMenu size={22} />}
+          </MobileMenuButton>
+        </div>
+      </Nav>
+
+      {/* Mobile Dropdown */}
+      {menuOpen && (
+        <MobileMenu>
+          <NavLinkItem href="#projects" onClick={() => setMenuOpen(false)}>
+            Projects
+          </NavLinkItem>
+          <NavLinkItem href="#tech" onClick={() => setMenuOpen(false)}>
+            Technologies
+          </NavLinkItem>
+          <NavLinkItem href="#about" onClick={() => setMenuOpen(false)}>
+            About
+          </NavLinkItem>
+          <NavLinkItem href="#timeline" onClick={() => setMenuOpen(false)}>
+            Timeline
+          </NavLinkItem>
+        </MobileMenu>
+      )}
+    </HeaderContainer>
+  );
+};
 
 export default Header;

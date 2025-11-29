@@ -1,41 +1,25 @@
-import React from 'react';
-import { AiFillGithub, AiFillInstagram, AiFillLinkedin } from 'react-icons/ai';
-
-import { SocialIcons } from '../Header/HeaderStyles';
-import { CompanyContainer, FooterWrapper, LinkColumn, LinkItem, LinkList, LinkTitle, Slogan, SocialContainer, SocialIconsContainer } from './FooterStyles';
+// src/components/Footer/Footer.js
+import React from "react";
+import { motion } from "framer-motion";
+import { FooterContainer, FooterWrapper, FooterText, FooterEmail } from "./FooterStyles";
 
 const Footer = () => {
   return (
-    <FooterWrapper>
-      <LinkList>
-        <LinkColumn>
-          <LinkTitle>Call</LinkTitle>
-          <LinkItem href="tel:+91 9494747920">+91 9494747920</LinkItem>
-        </LinkColumn>
-        <LinkColumn>
-          <LinkTitle>Email</LinkTitle>
-          <LinkItem href="mailto:kalyanatirupathirao@gmail.com">
-            kalyanatirupathirao@gmail.com
-          </LinkItem>
-        </LinkColumn>
-      </LinkList>
-      <SocialIconsContainer>
-        <CompanyContainer>
-          <Slogan>Innovating one project at a time</Slogan>
-        </CompanyContainer>
-        <SocialContainer>
-          <SocialIcons href="https://www.github.com/kalyana-tirupathi-rao">
-            <AiFillGithub size="3rem" />
-          </SocialIcons>
-          <SocialIcons href="https://www.linkedin.com/in/kalyana-tirupathi-rao">
-            <AiFillLinkedin size="3rem" />
-          </SocialIcons>
-          <SocialIcons href="https://google.com">
-            <AiFillInstagram size="3rem" />
-          </SocialIcons>
-        </SocialContainer>
-      </SocialIconsContainer>
-    </FooterWrapper>
+    <FooterContainer
+      as={motion.footer}
+      initial={{ opacity: 0, y: 12 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true }}
+      transition={{ duration: 0.5 }}
+    >
+      <FooterWrapper className="container">
+        <FooterText>© {new Date().getFullYear()} Kalyana Tirupathi Rao</FooterText>
+
+        <FooterEmail href="mailto:kalyanatirupathirao@gmail.com">
+          kalyanatirupathirao@gmail.com
+        </FooterEmail>
+      </FooterWrapper>
+    </FooterContainer>
   );
 };
 

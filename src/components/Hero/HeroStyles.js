@@ -1,19 +1,21 @@
-import styled from 'styled-components';
+import styled from "styled-components";
 
 export const LeftSection = styled.div`
   width: 100%;
-  @media ${(props) => props.theme.breakpoints.sm} {
-    width: 80%;
-    display: flex;
-    flex-direction: column;
+  max-width: 750px;
+  padding: 4rem 2rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 
-    margin: 0 auto;
-  }
   @media ${(props) => props.theme.breakpoints.md} {
-    width: 100%;
-    display: flex;
-    flex-direction: column;
+    padding: 3rem 1.5rem;
+    max-width: 650px;
+  }
 
+  @media ${(props) => props.theme.breakpoints.sm} {
+    padding: 2rem 1rem;
+    max-width: 100%;
     margin: 0 auto;
   }
 `;

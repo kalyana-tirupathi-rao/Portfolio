@@ -1,46 +1,138 @@
+// =====================
+// ⭐ PROJECTS SECTION
+// =====================
+
 export const projects = [
   {
-    title: 'Crop-Fertilizer-Recommendation-System',
-    description: "The Crop Fertilizer Recommendation System is an intelligent application designed to optimize agricultural productivity by providing customized fertilizer recommendations based on crop type, soil quality, and environmental conditions. By analyzing factors such as soil nutrient levels, pH, climate data, and crop requirements, this system generates personalized fertilizer suggestions to ensure optimal growth and yield. It helps farmers make informed decisions about fertilizer usage. The system aims to enhance crop performance, and contribute to sustainable farming practices.",
-      image: '/images/1.jpeg',
-      tags: ['Python',' Machine Leaning',' JAVASCRIPT',],
+    title: 'APAC Application Refactoring & Migration',
+    description:
+      "A large-scale data engineering project focused on refactoring and migrating APAC analytics applications from Teradata to Databricks using Azure Data Factory. Designed and optimized ETL pipelines for ingestion, transformation, and schema validation to improve performance and cost efficiency.",
+    image: '/images/apac.jpeg',
+    tags: ['Databricks', 'PySpark', 'SQL', 'ADF', 'Teradata', 'ETL'],
     source: 'https://google.com',
-    visit: 'https://github.com/kalyana-tirupathi-rao/Crop-Fertilizer-Recommendation-System',
+    visit: 'https://github.com/kalyana-tirupathi-rao',
     id: 0,
   },
   {
-    title: 'To-Do-List Project using MERN Stack',
-    description:"The To-Do List Project is a simple yet effective web or mobile application that helps users organize and manage their tasks in a structured way. The app allows users to create, edit, and delete tasks, set due dates, and categorize tasks based on priority or type. It also features task completion tracking, with the ability to mark tasks as done or pending. By offering a clean, user-friendly interface, this project aims to boost productivity and ensure that users stay on top of their daily, weekly, or long-term goals. Whether for personal use or small team collaboration, the To-Do List Project simplifies task management, making it easier to prioritize and accomplish tasks.",
-    image: '/images/2.jpeg',
-    tags: ['React', 'JavaScript', 'MongoDB', 'Node.js','python'],
+    title: 'Movie Recommendation System',
+    description:
+      "An end-to-end recommendation system using collaborative and content-based filtering. Built with Python and TensorFlow to analyze user preferences and deliver personalized movie suggestions.",
+    image: '/images/movie.jpeg',
+    tags: ['Python', 'TensorFlow', 'ML', 'Data Analysis'],
     source: 'https://google.com',
-    visit: 'https://github.com/kalyana-tirupathi-rao/To-Do-List',
+    visit: 'https://github.com/kalyana-tirupathi-rao',
     id: 1,
   },
   {
-    title: 'cervical-cancer-prediction',
-    description: "The Cervical Cancer Prediction System is a data-driven application designed to predict the likelihood of cervical cancer based on medical data and patient characteristics. Utilizing machine learning algorithms, this system analyzes patient data such as age, number of sexual partners, smoking history, and HPV (Human Papillomavirus) infection status to generate predictions regarding the potential for cervical cancer. The system helps healthcare professionals identify at-risk individuals early, enabling timely intervention and preventive measures. By leveraging statistical models and clinical data, reduce the mortality rate, and enhance patient outcomes in the fight against cervical cancer.",
-      image: '/images/3.jpeg',
-      tags: ['Python',' Scikit-learn',' machine learning'],
+    title: 'Heart Disease Prediction',
+    description:
+      "A predictive model that analyzes patient health metrics to detect the likelihood of heart disease. Built using machine learning algorithms with strong focus on preprocessing and feature engineering.",
+    image: '/images/heart.jpeg',
+    tags: ['Python', 'Scikit-learn', 'Machine Learning'],
     source: 'https://google.com',
-    visit: 'https://github.com/kalyana-tirupathi-rao/cervical-cancer-prediction',
+    visit: 'https://github.com/kalyana-tirupathi-rao',
     id: 2,
   },
   {
-    title: 'AI-Attendance using Face Recognition',
-    description: "The AI Attendance System is an innovative solution that leverages artificial intelligence to automate and streamline the attendance tracking process. Using facial recognition or other AI-powered methods, this system can accurately mark attendance by identifying individuals in real-time without the need for manual input. The system offers high accuracy, ease of use, and efficiency, reducing administrative workload and human error. By integrating with existing databases and providing detailed reports, the AI Attendance System aims to enhance classroom or workplace attendance management, ensuring security, privacy, and seamless operation.",
-    image: '/images/4.jpeg',
-    tags: ['React', 'python', 'OpenCV', 'face-recognition','JavaScript'],
+    title: 'Graduation Admission Predictor',
+    description:
+      "Machine learning model created during an internship at IIIT Hyderabad to predict graduate admission chances using GRE, TOEFL, CGPA, and research scores.",
+    image: '/images/admission.jpeg',
+    tags: ['Python', 'ML', 'Regression Models'],
     source: 'https://google.com',
-    visit: 'https://github.com/kalyana-tirupathi-rao/AI-Attendance',
+    visit: 'https://github.com/kalyana-tirupathi-rao',
     id: 3,
   },
 ];
 
+
+// =====================
+// ⭐ EXPERIENCE
+// =====================
+
+export const experience = [
+  {
+    role: "Data Engineer",
+    company: "Cliff IT Solutions (PepsiCo Vendor)",
+    period: "Apr 2025 – Present",
+    details: [
+      "Refactoring and migrating analytics applications from Teradata to Azure Databricks.",
+      "Building scalable ETL pipelines using ADF and PySpark.",
+      "Performing data quality checks, validation, and schema enforcement.",
+      "Optimizing SQL & PySpark scripts for performance and reliability."
+    ]
+  },
+  {
+    role: "Data Science & Machine Learning Intern",
+    company: "Edureka",
+    period: "Sep 2023 – Feb 2024",
+    details: [
+      "Completed hands-on projects in ML, DL, Python, and SQL.",
+      "Automated data workflows reducing manual efforts by 30%.",
+      "Developed dashboards and analytics reports for insights."
+    ]
+  },
+  {
+    role: "Machine Learning Intern",
+    company: "IIIT Hyderabad",
+    period: "Feb 2023 – Apr 2023",
+    details: [
+      "Built 'Graduation Admission Predictor' using ML algorithms.",
+      "Gained practical experience in training and evaluating ML models."
+    ]
+  }
+];
+
+
+// =====================
+// ⭐ SKILLS SECTION
+// =====================
+
+export const skills = {
+  programming: ['Python', 'SQL', 'C', 'Java (Intermediate)', 'R (Intermediate)'],
+  dataEngineering: ['Databricks', 'Azure Data Factory', 'Teradata', 'SQL Server', 'Azure Data Lake'],
+  visualization: ['Power BI', 'Tableau', 'Excel', 'Google Sheets'],
+  machineLearning: ['Scikit-learn', 'TensorFlow (Beginner)', 'Pandas', 'NumPy'],
+  tools: ['GitHub', 'Google Workspace']
+};
+
+
+// =====================
+// ⭐ CERTIFICATIONS
+// =====================
+
+export const certifications = [
+  "Google Analytics Certification",
+  "Data Science & Machine Learning Virtual Internship – Edureka",
+  "Data Science for Engineers (NPTEL)",
+  "TCS iON Career Edge – Young Professional",
+  "IBM SkillBuild – Data Fundamentals",
+  "Fast Track Python – iNeuron",
+  "Microsoft + LinkedIn – Generative AI",
+  "Cisco – Introduction to Data Science"
+];
+
+
+// =====================
+// ⭐ ACHIEVEMENTS
+// =====================
+
+export const achievements = [
+  "Executed Kerala Rainfall Data Analysis and presented insights.",
+  "Organized Internal Smart India Hackathon 2024 at KIET.",
+  "Actively researching advanced ML algorithms from academic papers.",
+  "Active on Quora sharing knowledge on programming and data science."
+];
+
+
+// =====================
+// ⭐ TIMELINE
+// =====================
+
 export const TimeLineData = [
-  { year: 2021, text: 'Started my journey', },
-  { year: 2022, text: 'Worked as a Teaching Assistant (Python, C, Operating System) at Kiet Groups', },
-  { year: 2023, text: 'Bulid Social Network through the Linkedin, Quora', },
-  { year: 2024, text: 'Student IQAC MEMBER & Learning Multiple Tools and Technologies', },
-  { year: 2025, text: 'Completed my B.Tech Course in Kiet Groups', },
+  { year: 2021, text: 'Started B.Tech journey in Computer Science (Data Science)' },
+  { year: 2022, text: 'Strengthened programming & data science fundamentals' },
+  { year: 2023, text: 'Completed IIIT Hyderabad ML Internship & built ML projects' },
+  { year: 2024, text: 'Organized SIH 2024 & completed major ML projects' },
+  { year: 2025, text: 'Joined Cliff IT Solutions as Data Engineer & completed B.Tech' },
 ];

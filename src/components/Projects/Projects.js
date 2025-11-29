@@ -20,7 +20,6 @@ import {
 } from "../../styles/GlobalComponents";
 import { projects } from "../../constants/constants";
 
-// Animation Variants
 const containerVariants = {
   hidden: { opacity: 0 },
   show: {
@@ -55,16 +54,11 @@ const Projects = () => (
           as={motion.div}
           key={i}
           variants={cardVariants}
-          whileHover={
-            window.innerWidth > 768
-              ? {
-                  y: -8,
-                  boxShadow: "0px 12px 25px rgba(0,0,0,0.35)",
-                }
-              : {}
-          }
+          whileHover={{
+            y: -8,
+            boxShadow: "0px 12px 25px rgba(0,0,0,0.35)",
+          }}
         >
-          {/* Fallback Image Prevention */}
           <Img
             src={p.image || "/images/default.png"}
             alt={p.title}
@@ -80,7 +74,6 @@ const Projects = () => (
 
           <TitleContent>Stack</TitleContent>
 
-          {/* Safe mapping of tags */}
           <TagList>
             {Array.isArray(p.tags) &&
               p.tags.map((t, index) => <Tag key={index}>{t}</Tag>)}

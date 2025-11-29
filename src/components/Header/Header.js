@@ -1,75 +1,78 @@
 // src/components/Header/Header.js
-import React, { useState } from "react";
-import {
-  HeaderContainer,
-  Nav,
-  Logo,
-  NavLinks,
-  NavLinkItem,
-  ToggleBtn,
-  MobileMenuButton,
-  MobileMenu,
-} from "./HeaderStyles";
-import { FiSun, FiMoon, FiGithub, FiMenu, FiX } from "react-icons/fi";
+import React from "react";
+import { HeaderContainer, Logo, Nav, NavLinks, NavLinkItem, ToggleBtn } from "./HeaderStyles";
+import { FiSun, FiMoon, FiGithub } from "react-icons/fi";
+import { FaLinkedin, FaYoutube } from "react-icons/fa";
 
 const Header = ({ toggleTheme, themeName }) => {
-  const [menuOpen, setMenuOpen] = useState(false);
-
   return (
     <HeaderContainer>
-      <Nav className="container">
+      <div
+        className="container"
+        style={{
+          display: "flex",
+          alignItems: "center",
+          justifyContent: "space-between",
+          gap: "1rem",
+        }}
+      >
         {/* Logo */}
         <Logo href="/">Kalyana Rao</Logo>
 
-        {/* Desktop Links */}
-        <NavLinks>
-          <NavLinkItem href="#projects">Projects</NavLinkItem>
-          <NavLinkItem href="#tech">Technologies</NavLinkItem>
-          <NavLinkItem href="#about">About</NavLinkItem>
-          <NavLinkItem href="#timeline">Timeline</NavLinkItem>
-        </NavLinks>
+        {/* Navigation */}
+        <Nav>
+          <NavLinks>
+            <NavLinkItem href="#projects">Projects</NavLinkItem>
+            <NavLinkItem href="#tech">Technologies</NavLinkItem>
+            <NavLinkItem href="#about">About</NavLinkItem>
+            <NavLinkItem href="#timeline">Timeline</NavLinkItem>
+          </NavLinks>
 
-        {/* Right Section */}
-        <div style={{ display: "flex", alignItems: "center", gap: "1rem" }}>
-          {/* Theme Toggle */}
-          <ToggleBtn onClick={toggleTheme} aria-label="toggle theme">
-            {themeName === "dark" ? <FiSun size={18} /> : <FiMoon size={18} />}
-          </ToggleBtn>
-
-          {/* GitHub */}
-          <a
-            href="https://github.com/kalyana-tirupathi-rao"
-            target="_blank"
-            rel="noreferrer"
-            aria-label="github"
+          {/* Right Icons */}
+          <div
+            style={{
+              display: "flex",
+              gap: "1rem",
+              alignItems: "center",
+            }}
           >
-            <FiGithub size={20} />
-          </a>
+            {/* LinkedIn */}
+            <a
+              href="https://www.linkedin.com/in/kalyana-tirupathi-rao"
+              target="_blank"
+              rel="noreferrer"
+              aria-label="LinkedIn"
+            >
+              <FaLinkedin size={20} />
+            </a>
 
-          {/* Mobile Menu Button */}
-          <MobileMenuButton onClick={() => setMenuOpen(!menuOpen)}>
-            {menuOpen ? <FiX size={22} /> : <FiMenu size={22} />}
-          </MobileMenuButton>
-        </div>
-      </Nav>
+            {/* YouTube */}
+            <a
+              href="https://www.youtube.com/channel/UCgXTWisHjK7FJa7xb71oN6A"
+              target="_blank"
+              rel="noreferrer"
+              aria-label="YouTube"
+            >
+              <FaYoutube size={20} />
+            </a>
 
-      {/* Mobile Dropdown */}
-      {menuOpen && (
-        <MobileMenu>
-          <NavLinkItem href="#projects" onClick={() => setMenuOpen(false)}>
-            Projects
-          </NavLinkItem>
-          <NavLinkItem href="#tech" onClick={() => setMenuOpen(false)}>
-            Technologies
-          </NavLinkItem>
-          <NavLinkItem href="#about" onClick={() => setMenuOpen(false)}>
-            About
-          </NavLinkItem>
-          <NavLinkItem href="#timeline" onClick={() => setMenuOpen(false)}>
-            Timeline
-          </NavLinkItem>
-        </MobileMenu>
-      )}
+            {/* Theme Toggle */}
+            <ToggleBtn onClick={toggleTheme} aria-label="toggle theme">
+              {themeName === "dark" ? <FiSun size={18} /> : <FiMoon size={18} />}
+            </ToggleBtn>
+
+            {/* GitHub */}
+            <a
+              href="https://github.com/kalyana-tirupathi-rao"
+              target="_blank"
+              rel="noreferrer"
+              aria-label="GitHub"
+            >
+              <FiGithub size={20} />
+            </a>
+          </div>
+        </Nav>
+      </div>
     </HeaderContainer>
   );
 };
